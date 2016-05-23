@@ -83,6 +83,10 @@ map <C-l> :call WinMove('l')<cr>
 
 " Save window with w
 noremap <leader>w :w<cr>
+
+" comment out text
+noremap <leader>/ :Commentary<cr>
+
 " open fussy file search
 let g:ctrlp_map = '<c-p>'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/env/*
