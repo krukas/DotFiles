@@ -1,4 +1,6 @@
 #!/bin/bash
+SCRIPT=`realpath -s $0`
+SCRIPTPATH=`dirname $SCRIPT`
 
 # Update submodules
 echo "Update submodles"
@@ -14,8 +16,9 @@ python vim/bundle/YouCompleteMe/install.py
 
 # Create symlinks
 echo "Create symlinks"
-ln -s vim ~/.vim
-ln -s vimrc ~/.vimrc
-ln -s bashrc ~/.bashrc
-ln -s tmux.conf ~/.tmux.conf
+rm -rf ~/.vim
+ln -sf "$SCRIPTPATH/vim" ~/.vim
+ln -sf "$SCRIPTPATH/vimrc" ~/.vimrc
+ln -sf "$SCRIPTPATH/bashrc" ~/.bashrc
+ln -sf "$SCRIPTPATH/tmux.conf" ~/.tmux.conf
 
