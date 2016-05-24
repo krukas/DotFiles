@@ -21,6 +21,10 @@ set filetype=python
 " faster redrawing
 set ttyfast
 
+" Enable highlight search + add toggle
+set hlsearch
+nnoremap <F3> :set hlsearch!<CR>
+
 " Tab display and insert settings
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin indent on
