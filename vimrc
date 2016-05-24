@@ -32,6 +32,7 @@ set shiftwidth=4 " number of spaces to use for indent and unindent
 set shiftround " round indent to a multiple of 'shiftwidth'
 " Overwrite setting for ftplugin/python.vim
 autocmd BufNewFile,BufRead *.py setlocal tabstop=4
+autocmd BufNewFile,BufRead *.py setlocal noexpandtab
 
 " Buffer Settings
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
