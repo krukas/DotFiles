@@ -37,3 +37,6 @@
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/bundle/vim-bufkill"]
+	path = vim/bundle/vim-bufkill
+	url = https://github.com/qpkorr/vim-bufkill.git

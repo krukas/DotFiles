@@ -51,7 +51,7 @@ nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
 
 " Close the current buffer and move to the previous one
-nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>e :bp <BAR> bd #<CR>
 
 
 " Window
