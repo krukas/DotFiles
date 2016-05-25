@@ -92,6 +92,11 @@ noremap <leader>w :w<cr>
 " comment out text
 noremap <leader>/ :Commentary<cr>
 
+" goto defenition
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+
+" run python code
+nnoremap <silent> <F5> :!clear;python3 %<CR>
 " open fussy file search
 let g:ctrlp_map = '<c-p>'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/env/*
