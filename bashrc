@@ -135,3 +135,6 @@ alias gam='git commit --amend --no-edit'
 
 # go folder back
 alias ..='cd ..'
+
+# Set title 
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}\007"'
