@@ -144,3 +144,6 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 source /home/maikel/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+
+# Set title 
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}\007"'
