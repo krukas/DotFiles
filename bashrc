@@ -117,7 +117,19 @@ if ! shopt -oq posix; then
 fi
 
 # Custom prompt
-PS1="\[\e[00;33m\]\u\[\e[0m\]\[\e[00;37m\]@\h:\[\e[0m\]\[\e[00;36m\][\w]\[\e[0m\]\[\e[00;32m\]\nbash>\[\e[0m\]"
+function parse_git_branch() { # Git Branch
+  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  if [ ! "${BRANCH}" == "" ]
+  then
+    echo "[${BRANCH}]"
+  else
+    echo ""
+  fi
+}
+
+# PS1 Line.
+PS1="\[\e[00;33m\]\u\[\e[0m\]\[\e[00;37m\]@\h:\[\e[0m\]\[\e[0;31m\]\`parse_git_branch\`\[\e[m\]\[\e[00;36m\][\w]\[\e[0m\]\[\e[00;32m\]\nbash> \[\e[0m\]"
+
 
 #git autocomplete
 if [ -f /etc/bash_completion.d/git ]; then 
@@ -137,13 +149,13 @@ alias gam='git commit --amend --no-edit'
 alias ..='cd ..'
 
 # powerline
-export PATH="$HOME/.local/bin:$PATH"
-export POWERLINE_COMMAND=powerline
-export POWERLINE_CONFIG_COMMAND=powerline-config
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-source /home/maikel/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+#export PATH="$HOME/.local/bin:$PATH"
+#export POWERLINE_COMMAND=powerline
+#export POWERLINE_CONFIG_COMMAND=powerline-config
+#powerline-daemon -q
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
+#source /usr/share/powerline/bindings/shell/powerline.sh
 
 # Set title 
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}\007"'
