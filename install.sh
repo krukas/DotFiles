@@ -10,6 +10,11 @@ git submodule update --init --recursive
 echo "Install dependencies for YouCompleteMe"
 sudo apt-get install build-essential cmake python-dev python3-dev
 
+# Install powerline fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+source fonts/install.sh
+rm -rf fonts
+
 # Install YouCompleteMe
 echo "Install YoucompleteMe"
 python vim/bundle/YouCompleteMe/install.py
