@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=-1
+HISTFILESIZE=-1
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -135,3 +135,12 @@ alias gam='git commit --amend --no-edit'
 
 # go folder back
 alias ..='cd ..'
+
+# powerline
+export PATH="$HOME/.local/bin:$PATH"
+export POWERLINE_COMMAND=powerline
+export POWERLINE_CONFIG_COMMAND=powerline-config
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+source /home/maikel/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
