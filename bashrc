@@ -127,8 +127,18 @@ function parse_git_branch() { # Git Branch
   fi
 }
 
-# PS1 Line.
-PS1="\[\e[00;33m\]\u\[\e[0m\]\[\e[00;37m\]@\h:\[\e[0m\]\[\e[0;31m\]\`parse_git_branch\`\[\e[m\]\[\e[00;36m\][\w]\[\e[0m\]\[\e[00;32m\]\nbash> \[\e[0m\]"
+function parse_git_tag() { # Git Tag
+  TAG=`git describe --abbrev=0 --tags 2> /dev/null`
+  if [ ! "${TAG}" == "" ]
+  then
+    echo "[${TAG}]"
+  else
+    echo ""
+  fi
+}
+
+# PS1 Line
+PS1="\[\e[00;33m\]\u\[\e[0m\]\[\e[00;37m\]@\h:\[\e[0m\]\[\e[0;31m\]\`parse_git_branch\`\[\e[m\]\[\e[0m\]\[\e[0;38m\]\`parse_git_tag\`\[\e[m\]\[\e[00;36m\][\w]\[\e[0m\]\[\e[00;32m\]\nbash> \[\e[0m\]"
 
 
 #git autocomplete
