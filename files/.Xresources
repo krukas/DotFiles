@@ -1,0 +1,70 @@
+! special
+*.foreground:   #ffffff
+*.background:   #161616
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #222222
+*.color8:       #666666
+
+! red
+*.color1:       #d23d3d
+*.color9:       #e84f4f
+
+! green
+*.color2:       #b7ce42
+*.color10:      #bde077
+
+! yellow
+*.color3:       #fea63c
+*.color11:      #ffe863
+
+! blue
+*.color4:       #66aabb
+*.color12:      #aaccbb
+
+! magenta
+*.color5:       #b7416e
+*.color13:      #e16a98
+
+! cyan
+*.color6:       #42717b
+*.color14:      #6d878d
+
+! white
+*.color7:       #dddddd
+*.color15:      #cccccc
+
+
+!! URxvt Appearance
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+
+
+!! Copy Paste
+URxvt*iso14755: false
+URxvt*iso14755_52: false←
+URxvt*copyCommand: xclip -i -selection clipboard
+URxvt*pasteCommand: xclip -o -selection clipboard
+URxvt*keysym.Shift-Control-V: eval:paste_clipboard
+URxvt*keysym.Shift-Control-C: eval:selection_to_clipboard
+
+
+URxvt*perl-ext-common: default,matcher,selection-to-clipboard
+URxvt*url-launcher: firefox
+URxvt*underlineURLs: true
+URxvt*matcher.button: 1
+!!URxvt*urlButton: 1
+
+
+URxvt*font: xft:Hack-Regular:pixelsize=13,xft:Symbola
+URxvt*boldFont: xft:Hack-Bold:pixelsize=13:weight=bold,xft:Symbola
+URxvt*italicFont: xft:Hack-RegularOblique:pixelsize=13:slant=italic,xft:Symbola
+
+
+URxvt*depth: 32
+URxvt*background: [90]#161616
+
+!! Fake Transparent (set background image as background)
+!!URxvt*transparent: true
+!!URxvt*shading: 20

@@ -1,0 +1,9 @@
+[Unit]
+Description=CPU powersave
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cpupower frequency-set --max=3000mhz -g powersave
+
+[Install]
+WantedBy=multi-user.target
