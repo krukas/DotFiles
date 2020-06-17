@@ -79,7 +79,7 @@ set $workspace3 "3: Terminal"
 set $workspace4 "4: Misc"
 set $workspace5 "5: SQL"
 set $workspace6 "6"
-set $workspace7 "7"
+set $workspace7 "7: Steam"
 set $workspace8 "8: Passwords"
 set $workspace9 "9: Email"
 set $workspace10 "10: Music"
@@ -212,6 +212,9 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Project dmenu
+bindsym $mod+p exec --no-startup-id /home/$(whoami)/.local/bin/dmenu-projects
+
 # Screen Shots
 bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
 
@@ -219,6 +222,9 @@ bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures
 exec xset s off
 exec xset -dpms
 exec xset s noblank
+
+# Make capslock escape
+exec setxkbmap -option caps:escape
 
 # Startup applications
 exec --no-startup-id nm-applet # Network manager
@@ -230,6 +236,16 @@ exec --no-startup-id /usr/lib/gnome-settings-daemon-3.0/gsd-xsettings # Enable G
 
 # Enable sound on startup Chrome/Firefox wont enable it 
 exec --no-startup-id pactl set-sink-volume 0 15%
+
+# Default startup application
+exec --no-startup-id i3-msg 'workspace $workspace10; exec urxvt-256color -e sh -c "cmus"; workspace $workspace1; exec firefox'
+exec --no-startup-id i3-msg 'exec evolution'
+
+for_window [class="Firefox"] move to workspace $workspace1
+for_window [class="jetbrains-pycharm"] move to workspace $workspace2
+for_window [class="Steam"] move to workspace $workspace7
+for_window [class="KeePassXC"] move to workspace $workspace8
+for_window [class="Evolution"] move to workspace $workspace9
 
 
 # Fix jetbrain dialogs

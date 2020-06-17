@@ -187,3 +187,9 @@ create-rabbitmq-vhost () {
   sudo rabbitmqctl set_permissions -p $1 guest ".*" ".*" ".";
   echo amqp://guest:guest@localhost:5672/$1;
 }
+
+
+# Auto start virtualenv
+if [[ -f ./env/bin/activate ]] ; then
+    source ./env/bin/activate
+fi 
