@@ -16,7 +16,7 @@ gstreamer-plugins-ugly-orig-addon gstreamer-plugins-libav libdvdcss2 vlc-codecs
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 sudo zypper addrepo -g -f https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 
-sudo zypper install sublime-text git cpupower vim
+sudo zypper install sublime-text git cpupower vim cmus
 
 
 
