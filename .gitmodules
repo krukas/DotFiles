@@ -1,9 +1,6 @@
 [submodule "files/.vim/bundle/nerdtree"]
 	path = files/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "files/.vim/bundle/ctrlp.vim"]
-	path = files/.vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule "files/.vim/bundle/supertab"]
 	path = files/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
@@ -40,3 +37,6 @@
 [submodule "files/.vim/bundle/vim-matchit"]
 	path = files/.vim/bundle/vim-matchit
 	url = https://github.com/adelarsq/vim-matchit.git
+[submodule "files/.vim/bundle/vim-devicons"]
+	path = files/.vim/bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
