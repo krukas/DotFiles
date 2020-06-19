@@ -17,7 +17,7 @@ font pango:Hack-Regular-Nerd DejaVu Sans Mono 10
 floating_modifier $mod
 
 # start a terminal (Xresources for background image is not working)
-bindsym $mod+Return exec urxvt-256color --background-expr 'rootalign keep { load "$HOME/.config/i3/back-terminal.jpg" }'
+bindsym $mod+Return exec urxvt-256color-backimage
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -213,10 +213,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Project dmenu
-bindsym $mod+p exec --no-startup-id /home/$(whoami)/.local/bin/dmenu-projects
+bindsym $mod+p exec --no-startup-id $HOME/.local/bin/dmenu-projects
 
 # Screen Shots
-bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
+bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $HOME/Pictures/'
 
 # Disable screen turn of
 exec xset s off
@@ -238,7 +238,7 @@ exec --no-startup-id /usr/lib/gnome-settings-daemon-3.0/gsd-xsettings # Enable G
 exec --no-startup-id pactl set-sink-volume 0 15%
 
 # Default startup application
-exec --no-startup-id i3-msg 'workspace $workspace10; exec urxvt-256color -e sh -c "cmus"; workspace $workspace1; exec firefox'
+exec --no-startup-id i3-msg 'workspace $workspace10; exec urxvt-256color-backimage -e sh -c "cmus"; workspace $workspace1; exec firefox'
 exec --no-startup-id i3-msg 'exec evolution'
 
 for_window [class="Firefox"] move to workspace $workspace1

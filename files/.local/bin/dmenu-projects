@@ -23,4 +23,4 @@ then
 fi
 
 
-i3-msg "workspace 2: Editor; layout tabbed; exec /home/$(whoami)/opt/pycharm/bin/pycharm.sh $projectPath"
+i3-msg "workspace 2: Editor; exec /home/$(whoami)/opt/pycharm/bin/pycharm.sh $projectPath"
