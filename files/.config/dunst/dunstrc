@@ -178,3 +178,7 @@
     foreground = "#FFFFFF"
     frame_color = "#d23d3d"
     timeout = 0
+
+[play_sound]
+    summary = "*"
+    script = ~/.config/dunst/play-sound
