@@ -40,6 +40,10 @@
 URxvt*scrollBar: false
 URxvt*scrollBar_right: false
 
+URxvt*saveLines: 10000
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
 
 !! Copy Paste
 URxvt*iso14755: false
