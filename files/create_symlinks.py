@@ -8,6 +8,7 @@ home = os.path.expanduser("~")
 dir_symlinks = [
 	'.vim',
 	'.fonts',
+	r'.icons/[\w-]+',
 ]
 
 def is_dir_symlink(path):
