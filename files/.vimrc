@@ -146,14 +146,7 @@ let NERDTreeIgnore = ['__pycache__', '*.pyc']
 let NERDTreeShowHidden=1
 " let g:nerdtree_tabs_open_on_console_startup=1
 
-" Disable arrow keys in insert
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-map <up> :echo "use k"<CR>
-map <down> :echo "use j"<CR>
-map <left> :echo "use h"<CR>
-map <right> :echo "use l"<CR>
-
-
+" Make background transparant
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! LineNr ctermbg=NONE guibg=NONE
