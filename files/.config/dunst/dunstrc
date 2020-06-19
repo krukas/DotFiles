@@ -1,17 +1,7 @@
 [global]
     font = Hack-Regular DejaVu Sans Mono 10
     
-    # Allow a small subset of html markup:
-    #   <b>bold</b>
-    #   <i>italic</i>
-    #   <s>strikethrough</s>
-    #   <u>underline</u>
-    # 
-    # For a complete reference see
-    # <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
-    # If markup is not allowed, those tags will be stripped out of the
-    # message.
-    allow_markup = yes
+    markup = yes
     
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -21,7 +11,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "%s %p\n%b"
+    format = "<b>%s</b> %p\n%b"
     
     # Sort messages by urgency.
     sort = yes
@@ -37,7 +27,7 @@
     # window allows bounces back and forth.
     # This option conflicts with "word_wrap".
     # Set to 0 to disable.
-    bounce_freq = 5
+    bounce_freq = 0
 
     
     # Show age of message if message is older than show_age_threshold
@@ -47,7 +37,7 @@
     
     # Split notifications into multiple lines if they don't fit into
     # geometry.
-    word_wrap = no
+    word_wrap = yes
     
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
@@ -65,7 +55,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x4-25+25"
+    geometry = "350x4-25+30"
     
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -74,7 +64,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 15
+    transparency = 5
     
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -116,14 +106,14 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 1
+    separator_height = 2
     
     # Padding between text and separator.
     # padding = 8
     padding = 8
     
     # Horizontal padding.
-    horizontal_padding = 10
+    horizontal_padding = 8
     
     # Define a color for the separator.
     # possible values are:
@@ -131,7 +121,10 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = #454947
+    separator_color = frame
+
+    frame_width = 2
+    frame_color = "#161616"
     
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
@@ -148,50 +141,40 @@
     icon_position = left
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
-[frame]
-    width = 2
-    color = "#2FFFFFF"
 
 [shortcuts]
 
     # Shortcuts are specified as [modifier+][modifier+]...key
     # Available modifiers are "ctrl", "mod1" (the alt-key), "mod2",
-    # "mod3" and "mod4" (windows-key).
-    # Xev might be helpful to find names for keys.
     
     # Close notification.
     close = mod1+space
     
     # Close all notifications.
-    # close_all = ctrl+shift+space
     close_all = ctrl+mod1+space
 
     # Redisplay last message(s).
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1".
-    history = ctrl+mod4+h 
+    history = ctrl+mod1+h 
     
     # Context menu.
     context = ctrl+mod1+c
 
 [urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#161616"
+    background = "#222222"
     foreground = "#FFFFFF"
-    frame_color = "#161616"
     timeout = 10
 
 [urgency_normal]
-    background = "#161616"
+    background = "#222222"
     foreground = "#FFFFFF"
-    frame_color = "#b7ce42"
     timeout = 10
 
 [urgency_critical]
-    background = "#161616"
+    background = "#222222"
     foreground = "#FFFFFF"
     frame_color = "#d23d3d"
     timeout = 0
