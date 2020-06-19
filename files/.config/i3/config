@@ -228,7 +228,7 @@ exec --no-startup-id i3-msg 'exec evolution'
 # Theme
 ###################################################################################################
 
-font pango:Hack-Regular-Nerd DejaVu Sans Mono 10
+font pango:Hack Nerd Font, DejaVu, Sans Mono 10
 for_window [class="^.*"] border pixel 2
 hide_edge_borders smart
 
@@ -249,9 +249,8 @@ client.background $richBlack
 
 bar {
     position top
-    status_command i3status
+    status_command i3blocks
     tray_padding 0
-    font pango:Hack-Regular DejaVu Sans Mono 10
 
     colors {
             background          $richBlack

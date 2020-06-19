@@ -8,6 +8,7 @@ home = os.path.expanduser("~")
 dir_symlinks = [
 	'.vim',
 	'.fonts',
+	'.config/i3blocks/scripts',
 	r'.icons/[\w-]+',
 ]
 

@@ -124,7 +124,7 @@
     separator_color = frame
 
     frame_width = 2
-    frame_color = "#161616"
+    frame_color = "#66aabb"
     
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst

@@ -6,7 +6,7 @@ projectPath="/home/$(whoami)/Projects/$project"
 
 
 [ ! -d "$projectPath" ] && exit 1
-[ "$projectPath" = "/home/$(whoami)/Projects/" ] && exit 1
+[ "$projectPath" == "/home/$(whoami)/Projects/" ] && exit 1
 
 
 sudo systemctl start postgresql
