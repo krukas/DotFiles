@@ -11,13 +11,13 @@
 
 set $mod Mod4
 
-font pango:Hack-Regular DejaVu Sans Mono 10
+font pango:Hack-Regular-Nerd DejaVu Sans Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec urxvt-256color
+# start a terminal (Xresources for background image is not working)
+bindsym $mod+Return exec urxvt-256color --background-expr 'rootalign keep { load "$HOME/.config/i3/back-terminal.jpg" }'
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -153,13 +153,13 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #lock screen
-bindsym $mod+Ctrl+l exec i3lock -c 666666 -i ~/Pictures/wallpapers/lock.png
+bindsym $mod+Ctrl+l exec i3lock -c 666666 -i $HOME/.config/i3/lock.png
 
 # Wallpaper
-exec feh --bg-scale --zoom fill /home/maikel/Pictures/wallpapers/back.jpg
+exec feh --bg-scale --zoom fill $HOME/.config/i3/back.jpg
 
 # Compton
-exec --no-startup-id /usr/bin/compton --config ~/.config/compton.conf
+exec --no-startup-id /usr/bin/compton --config $HOME/.config/compton.conf
 
 # Border
 for_window [class="^.*"] border pixel 2
@@ -243,6 +243,7 @@ exec --no-startup-id i3-msg 'exec evolution'
 
 for_window [class="Firefox"] move to workspace $workspace1
 for_window [class="jetbrains-pycharm"] move to workspace $workspace2
+for_window [class="DBeaver"] move to workspace $workspace5
 for_window [class="Steam"] move to workspace $workspace7
 for_window [class="KeePassXC"] move to workspace $workspace8
 for_window [class="Evolution"] move to workspace $workspace9

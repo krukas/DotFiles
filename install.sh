@@ -16,13 +16,20 @@ gstreamer-plugins-ugly-orig-addon gstreamer-plugins-libav libdvdcss2 vlc-codecs
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 sudo zypper addrepo -g -f https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 
-sudo zypper install sublime-text git cpupower vim cmus
+sudo zypper install sublime-text git cpupower vim cmus htop fd
 
+# dev tools
+sudo zypper install cmake gcc gcc-c++ postgresql postgresql-server postgresql-devel python3 python3-pip python3-devel python3-setuptools python3-cffi
+
+# Install pipx for installing python application in own inverionment 
+pip3 install --user pipx
+
+pipx install pgcli
 
 
 # I3 Environment
 echo "Install and setup I3"
-sudo zypper install i3 feh compton playerctl scrot dunst parcellite gcc-c++ hack-fonts rxvt-unicode w3m-inline-image
+sudo zypper install i3 feh compton playerctl scrot dunst parcellite gcc-c++ hack-fonts rxvt-unicode ranger w3m-inline-image
 
 # Install j4-dmenu-desktop
 git clone https://github.com/enkore/j4-dmenu-desktop.git j4dmenu-src && cd j4dmenu-src

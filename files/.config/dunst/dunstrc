@@ -185,13 +185,13 @@
     timeout = 10
 
 [urgency_normal]
-    background = "#b7ce42"
+    background = "#161616"
     foreground = "#FFFFFF"
     frame_color = "#b7ce42"
     timeout = 10
 
 [urgency_critical]
-    background = "#d23d3d"
+    background = "#161616"
     foreground = "#FFFFFF"
     frame_color = "#d23d3d"
     timeout = 0

@@ -6,11 +6,8 @@ import shutil
 files_path = os.path.dirname(os.path.realpath(__file__))
 home = os.path.expanduser("~")
 dir_symlinks = [
-	r'.config/\w+',
-	'.local/bin',
 	'.vim',
 	'.fonts',
-
 ]
 
 def is_dir_symlink(path):

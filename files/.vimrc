@@ -152,3 +152,8 @@ map <up> :echo "use k"<CR>
 map <down> :echo "use j"<CR>
 map <left> :echo "use h"<CR>
 map <right> :echo "use l"<CR>
+
+
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
+hi! LineNr ctermbg=NONE guibg=NONE

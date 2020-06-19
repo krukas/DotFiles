@@ -116,6 +116,8 @@ alias ..='cd ..'
 
 alias ping='ping -c 5'
 
+alias fda='fd -IH'
+
 # Set title 
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}\007"'
 
@@ -135,6 +137,8 @@ PATH="$HOME/.local/bin:$PATH"
 # dont show GUI password prompt
 unset SSH_ASKPASS
 
+# pipx completion
+eval "$(register-python-argcomplete pipx)"
 
 # pip bash completion start
 _pip_completion()
@@ -192,4 +196,4 @@ create-rabbitmq-vhost () {
 # Auto start virtualenv
 if [[ -f ./env/bin/activate ]] ; then
     source ./env/bin/activate
-fi 
+fi

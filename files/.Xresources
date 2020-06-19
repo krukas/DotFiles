@@ -57,14 +57,20 @@ URxvt*matcher.button: 1
 !!URxvt*urlButton: 1
 
 
-URxvt*font: xft:Hack-Regular:pixelsize=13,xft:Symbola
-URxvt*boldFont: xft:Hack-Bold:pixelsize=13:weight=bold,xft:Symbola
-URxvt*italicFont: xft:Hack-RegularOblique:pixelsize=13:slant=italic,xft:Symbola
+URxvt*font: xft:Hack Nerd Font:pixelsize=14,xft:Symbol
+URxvt*boldFont: xft:Hack Nerd Font:pixelsize=14:weight=bold,xft:Symbol
+URxvt*italicFont: xft:Hack Nerd Font:pixelsize=14:slant=italic,xft:Symbola
 
 
-URxvt*depth: 32
-URxvt*background: [90]#161616
+!!URxvt*depth: 32
+!!URxvt*background: [90]#161616
 
 !! Fake Transparent (set background image as background)
 !!URxvt*transparent: true
-!!URxvt*shading: 20
+!!URxvt*shading: 10
+
+!!URxvt*.transparent: true
+!!URxvt*.shading: 30
+!!URxvt*.blurRadius: 80
+
+URxvt*.background.expr: 'rootalign keep { load "/home/maikel/.config/i3/back-terminal.jpg" }'
