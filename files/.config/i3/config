@@ -234,34 +234,35 @@ hide_edge_borders smart
 
 # Colors
 set $white #FFFFFF
+set $gray #DDDDDD
 set $richBlack #161616
 set $darkBlue #42717b
 set $lichtBlue #6d878d
 
 #                       Border        background    text       indicator      child border
 client.focused          $darkBlue     $darkBlue     $white     $lichtBlue     $darkBlue  
-client.unfocused        $darkBlue     $richBlack    $white     $lichtBlue     $richBlack
-client.focused_inactive $richBlack    $lichtBlue    $white     $lichtBlue     $richBlack
-client.urgent           $richBlack    $richBlack    $white     $lichtBlue     $richBlack
-client.placeholder      $richBlack    $richBlack    $white     $lichtBlue     $richBlack
+client.unfocused        $darkBlue     $richBlack    $gray     $lichtBlue     $richBlack
+client.focused_inactive $richBlack    $lichtBlue    $gray     $lichtBlue     $richBlack
+client.urgent           $richBlack    $richBlack    $gray     $lichtBlue     $richBlack
+client.placeholder      $richBlack    $richBlack    $gray     $lichtBlue     $richBlack
 
 client.background $richBlack
 
 bar {
     position top
     status_command i3blocks
-    tray_padding 0
+    tray_padding 2
 
     colors {
             background          $richBlack
-            statusline          $white
+            statusline          $gray
             separator           $richBlack
             
             #                   border       background      text
             focused_workspace   $richBlack   $darkBlue       $white
-            active_workspace    $richBlack   $richBlack      $white
-            inactive_workspace  $richBlack   $richBlack      $white
-            urgent_workspace    $richBlack   $lichtBlue      $white
+            active_workspace    $richBlack   $richBlack      $gray
+            inactive_workspace  $richBlack   $richBlack      $gray
+            urgent_workspace    $richBlack   $lichtBlue      $gray
         }
 }
 

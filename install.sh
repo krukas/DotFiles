@@ -29,7 +29,7 @@ pipx install pgcli
 
 # I3 Environment
 echo "Install and setup I3"
-sudo zypper install i3 i3blocks bc feh compton playerctl scrot dunst parcellite hack-fonts rxvt-unicode ranger w3m-inline-image
+sudo zypper install i3 i3blocks bc feh compton playerctl scrot dunst parcellite hack-fonts rxvt-unicode ranger w3m-inline-image wireless-tools
 
 # Install j4-dmenu-desktop
 git clone https://github.com/enkore/j4-dmenu-desktop.git j4dmenu-src && cd j4dmenu-src
@@ -96,3 +96,8 @@ echo "" | sudo tee /etc/sudoers.d/cpupower
 echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/cpupower frequency-set --max=2400mhz" | sudo tee /etc/sudoers.d/cpupower -a
 echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/cpupower frequency-set --max=3000mhz" | sudo tee /etc/sudoers.d/cpupower -a
 sudo chmod 440 /etc/sudoers.d/cpupower
+
+echo "" | sudo tee /etc/sudoers.d/iwgetid
+echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/sbin/iwgetid -r" | sudo tee /etc/sudoers.d/iwgetid -a
+echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/sbin/iwgetid -r" | sudo tee /etc/sudoers.d/iwgetid -a
+sudo chmod 440 /etc/sudoers.d/iwgetid
