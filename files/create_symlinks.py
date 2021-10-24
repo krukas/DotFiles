@@ -42,6 +42,7 @@ for root, dirs, files in os.walk(files_path):
 			pass
 
 		print(root + ' -> ' + home_path)
+		os.makedirs(os.path.dirname(home_path), exist_ok=True)
 		os.symlink(root, home_path)
 		
 		continue
@@ -68,4 +69,5 @@ for root, dirs, files in os.walk(files_path):
 		os.makedirs(os.path.dirname(home_path), exist_ok=True)
 
 		print(file_path + ' -> ' + home_path)
+		os.makedirs(os.path.dirname(home_path), exist_ok=True)
 		os.symlink(file_path, home_path)
