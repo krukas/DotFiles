@@ -177,9 +177,12 @@ bindsym $mod+Ctrl+l exec i3lock -c 666666 -i $HOME/.config/i3/lock.png
 bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioRaiseVolume --release exec pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioLowerVolume --release exec pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioMute --release exec pkill -RTMIN+10 i3blocks
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -210,14 +213,14 @@ exec --no-startup-id parcellite
 # Wallpaper
 exec feh --bg-scale --zoom fill $HOME/.config/i3/back.jpg
 
-# Compton
-exec --no-startup-id /usr/bin/compton --config $HOME/.config/compton.conf
+# Picom
+exec --no-startup-id /usr/bin/picom --config $HOME/.config/picom.conf --no-use-damage
 
 # Gnome (Enable GTK themes and HiDPI support)
 exec --no-startup-id /usr/lib/gnome-settings-daemon-3.0/gsd-xsettings
 
 # Enable sound on startup Chrome/Firefox wont enable it 
-exec --no-startup-id pactl set-sink-volume 0 15%
+exec --no-startup-id pactl set-sink-volume 1 25%
 
 # Default startup application
 exec --no-startup-id i3-msg 'workspace $workspace10; exec urxvt-256color-backimage -e sh -c "cmus"; workspace $workspace1; exec firefox'
@@ -251,6 +254,7 @@ client.background $richBlack
 bar {
     position top
     status_command i3blocks
+    #status_command i3status
     tray_padding 2
 
     colors {

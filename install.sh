@@ -9,17 +9,16 @@ echo "Install applications"
 sudo zypper ar -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_$LEAP_VERSION/ packman
 
 # VLC + codec
-sudo zypper install vlc ffmpeg lame gstreamer-plugins-bad gstreamer-plugins-ugly 
-gstreamer-plugins-ugly-orig-addon gstreamer-plugins-libav libdvdcss2 vlc-codecs
+sudo zypper install --from packman vlc ffmpeg lame gstreamer-plugins-bad gstreamer-plugins-libav gstreamer-plugins-ugly gstreamer-plugins-ugly-orig-addon libavcodec58 libavdevice58 libavfilter7 libavformat58 libavresample4 libavutil56 vlc-codecs
 
 # Sublime text
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 sudo zypper addrepo -g -f https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 
-sudo zypper install sublime-text git cpupower vim cmus htop fd
+sudo zypper install sublime-text git cpupower vim cmus htop fd meld keepassxc
 
 # dev tools
-sudo zypper install cmake gcc gcc-c++ postgresql postgresql-server postgresql-devel python3 python3-pip python3-devel python3-setuptools python3-cffi
+sudo zypper install cmake gcc gcc-c++ postgresql postgresql-server postgresql-devel rabbitmq-server python3 python3-pip python3-devel python3-setuptools python3-cffi vagrant virtualbox
 
 # Install pipx for installing python application in own inverionment 
 pip3 install --user pipx
@@ -55,14 +54,14 @@ source /tmp/powerline/install.sh
 rm -rf /tmp/powerline
 
 # Install cpupower.service
-echo "Install and enable cpupower.service"
-sudo cp "$SCRIPTPATH/systemd/cpupower.service" /etc/systemd/system/cpupower.service
-sudo systemctl daemon-reload
-sudo systemctl enable cpupower.service
+# echo "Install and enable cpupower.service"
+# sudo cp "$SCRIPTPATH/systemd/cpupower.service" /etc/systemd/system/cpupower.service
+# sudo systemctl daemon-reload
+# sudo systemctl enable cpupower.service
 
 # Create symlinks
 echo "Create symlinks"
-python3 SCRIPTPATH/files/create_symlinks.py
+python3 $SCRIPTPATH/files/create_symlinks.py
 
 
 # Add sudoers rules
@@ -92,10 +91,10 @@ echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop rabbitmq-server" | s
 echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart rabbitmq-server" | sudo tee /etc/sudoers.d/rabbitmq-server -a
 sudo chmod 440 /etc/sudoers.d/rabbitmq-server
 
-echo "" | sudo tee /etc/sudoers.d/cpupower
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/cpupower frequency-set --max=2400mhz" | sudo tee /etc/sudoers.d/cpupower -a
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/cpupower frequency-set --max=3000mhz" | sudo tee /etc/sudoers.d/cpupower -a
-sudo chmod 440 /etc/sudoers.d/cpupower
+# echo "" | sudo tee /etc/sudoers.d/cpupower
+# echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/cpupower frequency-set --max=2400mhz" | sudo tee /etc/sudoers.d/cpupower -a
+# echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/cpupower frequency-set --max=3000mhz" | sudo tee /etc/sudoers.d/cpupower -a
+# sudo chmod 440 /etc/sudoers.d/cpupower
 
 echo "" | sudo tee /etc/sudoers.d/iwgetid
 echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/sbin/iwgetid -r" | sudo tee /etc/sudoers.d/iwgetid -a

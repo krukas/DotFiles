@@ -9,33 +9,34 @@ interval=5
 color=#e16a98
 
 [audio]
-interval=1
+interval=once
+signal=10
 color=#dddddd
 
 [seperator-custom]
 
 [bandwidth-icon]
 instance=eth1;in
-interval=1
+interval=5
 
 [bandwidth-icon]
 instance=eth1;out
-interval=1
+interval=5
 
 [network]
 instance=eth1
 label=
-interval=1
+interval=5
 
 [network]
 instance=usb0
 label=
-interval=1
+interval=5
 
 [network]
 instance=wlan0
 label=
-interval=1
+interval=5
 
 [vpn]
 interval=5
@@ -62,7 +63,7 @@ color=#fea63c
 
 [cpu]
 label=龍
-interval=2
+interval=5
 color=#aaccbb
 
 [memory]

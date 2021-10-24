@@ -1,3 +1,5 @@
 [user]
 	name = Krukas
 	email = maikel@martens.me
+[core]
+	editor = nano -w

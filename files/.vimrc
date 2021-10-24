@@ -4,6 +4,8 @@ execute pathogen#infect()
 " Rebind <leader> key
 let mapleader = "\<Space>"
 
+set backspace=indent,eol,start
+
 " Styling
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 syntax enable

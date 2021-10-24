@@ -9,3 +9,6 @@ sudo zypper dup --no-allow-vendor-change
 
 ## i3wm
 For better gnome integration install https://github.com/i3-gnome/i3-gnome
+
+## Decrease SSD writes (lower watt)
+Add noatime,nodiratime options to all fstab mounts

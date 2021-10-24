@@ -15,11 +15,11 @@ sudo systemctl start rabbitmq-server
 
 if [ -z "$(i3-msg -t get_workspaces | grep '3: Terminal')" ]
 then
-    i3-msg "workspace 3: Terminal;"
+    	i3-msg "workspace 3: Terminal;"
+	sleep 0.1
 	urxvt-256color-backimage -e bash -c "cd $projectPath; make run; bash;" &
-	sleep 0.1
 	urxvt-256color-backimage -e bash -c "cd $projectPath; bash;" &
-	sleep 0.1
+	sleep 0.2
 fi
 
 
