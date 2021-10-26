@@ -47,6 +47,15 @@ pip3 install --user pipx
 
 pipx install black isort
 
+# Install pyenv
+if [ ! -d "$HOME/.pyenv" ]
+then
+  echo "Install pyenv"
+  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+  cd ~/.pyenv && src/configure && make -C src
+  cd $SCRIPTPATH
+fi
+
 
 # Update submodules
 echo "Update submodles"

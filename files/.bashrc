@@ -89,7 +89,7 @@ PS1="\[\e[00;96m\]\u\[\e[0m\]\[\e[00;37m\]@\h:\[\e[0m\]\[\e[0;93m\]\`parse_git_b
 
 #git autocomplete
 if [ -f /etc/bash_completion.d/git ]; then 
-	. /etc/bash_completion.d/git
+  . /etc/bash_completion.d/git
 fi
 
 # General allias
@@ -164,21 +164,7 @@ complete -F _django_completion -o default django-admin.py manage.py django-admin
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-alias cpu-normal='sudo cpupower frequency-set --max=3000mhz'
-alias cpu-low='sudo cpupower frequency-set --max=2400mhz'
-
-alias vpn-start='sudo systemctl start openvpn@client'
-alias vpn-stop='sudo systemctl stop openvpn@client'
-
-alias venv='python3 -m venv env; . env/bin/activate'
 alias activate='. env/bin/activate'
-
-# Postgresql helper aliases and functions 
-alias start-postgresql='sudo systemctl start postgresql'
-
-
-# RabbitMQ helper aliases and functions 
-alias start-rabbitmq='sudo systemctl start rabbitmq-server'
 
 create-rabbitmq-vhost () {
   if [ -z "$1" ] 
@@ -197,3 +183,8 @@ create-rabbitmq-vhost () {
 if [[ -f ./env/bin/activate ]] ; then
     source ./env/bin/activate
 fi
+
+# Improve python breakpoint
+export PYTHONBREAKPOINT="ipdb.set_trace"
+
+eval "$(pyenv init -)"
