@@ -52,6 +52,8 @@ if [ ! -d "$HOME/.pyenv" ]
 then
   echo "Install pyenv"
   git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+  git clone https://github.com/jawshooah/pyenv-default-packages.git ~/.pyenv/plugins/pyenv-default-packages
+  echo "ipdb" >> ~/.pyenv/default-packages
   cd ~/.pyenv && src/configure && make -C src
   cd $SCRIPTPATH
 fi
