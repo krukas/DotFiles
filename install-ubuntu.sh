@@ -91,6 +91,11 @@ source /tmp/powerline/install.sh
 rm -rf /tmp/powerline
 
 
+# Import dconf
+echo "Import Gnome dconf settings"
+dconf load / < $SCRIPTPATH/install/dconf.export
+
+
 # Create symlinks
 echo "Create symlinks"
 python3 $SCRIPTPATH/files/create_symlinks.py
