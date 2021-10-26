@@ -14,6 +14,7 @@ packagelist=(
   gnome-session
   gnome-tweaks
   sublime-text
+  vim
   # Media
   ubuntu-restricted-extras
   vlc
@@ -44,6 +45,17 @@ sudo apt-get install --assume-yes ${packagelist[@]}
 pip3 install --user pipx
 
 pipx install black isort
+
+
+# Update submodules
+echo "Update submodles"
+git submodule update --init --recursive
+
+# Install powerline fonts
+mkdir /tmp/powerline
+git clone https://github.com/powerline/fonts.git /tmp/powerline --depth=1
+source /tmp/powerline/install.sh
+rm -rf /tmp/powerline
 
 
 # Create symlinks

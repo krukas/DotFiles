@@ -53,11 +53,6 @@ git clone https://github.com/powerline/fonts.git /tmp/powerline --depth=1
 source /tmp/powerline/install.sh
 rm -rf /tmp/powerline
 
-# Install cpupower.service
-# echo "Install and enable cpupower.service"
-# sudo cp "$SCRIPTPATH/systemd/cpupower.service" /etc/systemd/system/cpupower.service
-# sudo systemctl daemon-reload
-# sudo systemctl enable cpupower.service
 
 # Create symlinks
 echo "Create symlinks"
@@ -67,34 +62,6 @@ python3 $SCRIPTPATH/files/create_symlinks.py
 # Add sudoers rules
 echo "Add sudoers rules"
 
-echo "" | sudo tee /etc/sudoers.d/postgresql
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl start postgresql" | sudo tee /etc/sudoers.d/postgresql -a
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop postgresql" | sudo tee /etc/sudoers.d/postgresql -a
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart postgresql" | sudo tee /etc/sudoers.d/postgresql -a
-sudo chmod 440 /etc/sudoers.d/postgresql
-
-echo "" | sudo tee /etc/sudoers.d/openvpn
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl start openvpn" | sudo tee /etc/sudoers.d/openvpn@client -a
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop openvpn" | sudo tee /etc/sudoers.d/openvpn@client -a
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart openvpn" | sudo tee /etc/sudoers.d/openvpn@client -a
-sudo chmod 440 /etc/sudoers.d/openvpn
-
-echo "" | sudo tee /etc/sudoers.d/mysql
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl start mysql" | sudo tee /etc/sudoers.d/mysql -a
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop mysql" | sudo tee /etc/sudoers.d/mysql -a
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart mysql" | sudo tee /etc/sudoers.d/mysql -a
-sudo chmod 440 /etc/sudoers.d/mysql
-
-echo "" | sudo tee /etc/sudoers.d/rabbitmq-server
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl start rabbitmq-server" | sudo tee /etc/sudoers.d/rabbitmq-server -a
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop rabbitmq-server" | sudo tee /etc/sudoers.d/rabbitmq-server -a
-echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart rabbitmq-server" | sudo tee /etc/sudoers.d/rabbitmq-server -a
-sudo chmod 440 /etc/sudoers.d/rabbitmq-server
-
-# echo "" | sudo tee /etc/sudoers.d/cpupower
-# echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/cpupower frequency-set --max=2400mhz" | sudo tee /etc/sudoers.d/cpupower -a
-# echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/cpupower frequency-set --max=3000mhz" | sudo tee /etc/sudoers.d/cpupower -a
-# sudo chmod 440 /etc/sudoers.d/cpupower
 
 echo "" | sudo tee /etc/sudoers.d/iwgetid
 echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/sbin/iwgetid -r" | sudo tee /etc/sudoers.d/iwgetid -a
