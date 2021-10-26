@@ -36,6 +36,22 @@ packagelist=(
   python3-setuptools
   python3-wheel
   python3-cffi
+  # Pyenv
+  libssl-dev
+  zlib1g-dev
+  libbz2-dev
+  libreadline-dev
+  libsqlite3-dev
+  wget
+  curl
+  llvm
+  libncursesw5-dev
+  xz-utils
+  tk-dev
+  libxml2-dev
+  libxmlsec1-dev
+  libffi-dev
+  liblzma-dev
 )
 
 sudo apt-get update
