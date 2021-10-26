@@ -20,6 +20,7 @@ packagelist=(
   vlc
   # Development
   build-essential
+  gettext
   virtualbox
   vagrant
   meld
