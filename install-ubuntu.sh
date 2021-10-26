@@ -63,6 +63,7 @@ pip3 install --user pipx
 
 pipx install black isort
 
+
 # Install pyenv
 if [ ! -d "$HOME/.pyenv" ]
 then
@@ -73,6 +74,10 @@ then
   cd ~/.pyenv && src/configure && make -C src
   cd $SCRIPTPATH
 fi
+
+
+# Setup postgresql
+sudo runuser postgres -c "psql -c \"CREATE ROLE $(whoami) LOGIN SUPERUSER PASSWORD '$(whoami)';\""
 
 
 # Update submodules
