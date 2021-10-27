@@ -17,9 +17,11 @@ temp=$(mktemp -d)
 url=$(get_donwload_link "$uuid")
 curl -L "$url" > "$temp/e.zip"
 
+dest="$HOME/.local/share/gnome-shell/extensions/$uuid"
+rm -rf "$dest"
+unzip "$temp/e.zip" -d "$dest"
 
 # Install and enable extension
-gnome-extensions install "$temp/e.zip" --force
 gnome-extensions enable "$uuid"
 
 # cleanup
