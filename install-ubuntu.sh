@@ -98,7 +98,7 @@ rm -rf /tmp/powerline
 
 # Install gnome shell extensions
 echo "Install gnome shell extensions"
-$SCRIPTPATH/install/install-gnome-extension.sh "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
+$SCRIPTPATH/install/install-gnome-extension.sh "improved-workspace-indicator@michaelaquilina.github.io"
 $SCRIPTPATH/install/install-gnome-extension.sh "workspace_scroll@squgeim.com.np"
 $SCRIPTPATH/install/install-gnome-extension.sh "NordVPN_Connect@poilrouge.fr"
 $SCRIPTPATH/install/install-gnome-extension.sh "user-theme@gnome-shell-extensions.gcampax.github.com"
