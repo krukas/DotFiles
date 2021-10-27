@@ -18,6 +18,7 @@ url=$(get_donwload_link "$uuid")
 curl -L "$url" > "$temp/e.zip"
 
 dest="$HOME/.local/share/gnome-shell/extensions/$uuid"
+mkdir -p "$HOME/.local/share/gnome-shell/extensions/"
 rm -rf "$dest"
 unzip "$temp/e.zip" -d "$dest"
 
