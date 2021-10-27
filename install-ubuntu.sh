@@ -10,10 +10,15 @@ sudo apt-get install --reinstall apt-transport-https ca-certificates
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb [trusted=yes] https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
+# Add NordVpn
+wget -qO - https://repo.nordvpn.com/gpg/nordvpn_public.asc | sudo apt-key add -
+echo "deb https://repo.nordvpn.com/deb/nordvpn/debian stable main" | sudo tee /etc/apt/sources.list.d/nordvpn.list
+
 packagelist=(
   gnome-session
   gnome-tweaks
   sublime-text
+  nordvpn
   vim
   # Media
   ubuntu-restricted-extras
