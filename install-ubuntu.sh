@@ -10,25 +10,36 @@ sudo apt-get install --reinstall apt-transport-https ca-certificates
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb [trusted=yes] https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
-# Add NordVpn
+# Add NordVpn repo
 wget -qO - https://repo.nordvpn.com/gpg/nordvpn_public.asc | sudo apt-key add -
 echo "deb https://repo.nordvpn.com/deb/nordvpn/debian stable main" | sudo tee /etc/apt/sources.list.d/nordvpn.list
+
+# Add Spotify repo
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
 packagelist=(
   gnome-session
   gnome-tweaks
-  sublime-text
+  # Applications
   nordvpn
-  vim
+  keepassxc
+  chromium-browser
+  evolution
+  steam
+  spotify-client
   # Media
   ubuntu-restricted-extras
   vlc
   # Development
+  sublime-text
+  vim
   build-essential
   gettext
   virtualbox
   vagrant
   meld
+  dbeaver-ce
   # Postgresql
   postgresql
   postgresql-contrib
