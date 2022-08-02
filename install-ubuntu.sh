@@ -109,18 +109,17 @@ rm -rf /tmp/powerline
 
 # Install gnome shell extensions
 echo "Install gnome shell extensions"
-$SCRIPTPATH/install/install-gnome-extension.sh "improved-workspace-indicator@michaelaquilina.github.io"
-$SCRIPTPATH/install/install-gnome-extension.sh "workspace_scroll@squgeim.com.np"
-$SCRIPTPATH/install/install-gnome-extension.sh "NordVPN_Connect@poilrouge.fr"
-$SCRIPTPATH/install/install-gnome-extension.sh "user-theme@gnome-shell-extensions.gcampax.github.com"
-$SCRIPTPATH/install/install-gnome-extension.sh "Resource_Monitor@Ory0n"
-$SCRIPTPATH/install/install-gnome-extension.sh "drive-menu@gnome-shell-extensions.gcampax.github.com"
-$SCRIPTPATH/install/install-gnome-extension.sh "places-menu@gnome-shell-extensions.gcampax.github.com"
-$SCRIPTPATH/install/install-gnome-extension.sh "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
-$SCRIPTPATH/install/install-gnome-extension.sh "no-title-bar@jonaspoehler.de"
-$SCRIPTPATH/install/install-gnome-extension.sh "dash-to-dock@micxgx.gmail.com"
 $SCRIPTPATH/install/install-gnome-extension.sh "appindicatorsupport@rgcjonas.gmail.com"
+$SCRIPTPATH/install/install-gnome-extension.sh "gnordvpn-local@isopolito"
+$SCRIPTPATH/install/install-gnome-extension.sh "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
+$SCRIPTPATH/install/install-gnome-extension.sh "places-menu@gnome-shell-extensions.gcampax.github.com"
+$SCRIPTPATH/install/install-gnome-extension.sh "user-theme@gnome-shell-extensions.gcampax.github.com"
+$SCRIPTPATH/install/install-gnome-extension.sh "drive-menu@gnome-shell-extensions.gcampax.github.com"
 $SCRIPTPATH/install/install-gnome-extension.sh "middleclickclose@paolo.tranquilli.gmail.com"
+$SCRIPTPATH/install/install-gnome-extension.sh "Resource_Monitor@Ory0n"
+$SCRIPTPATH/install/install-gnome-extension.sh "scroll-workspaces@gfxmonk.net"
+$SCRIPTPATH/install/install-gnome-extension.sh "gnome-ui-tune@itstime.tech"
+
 
 # Import dconf
 echo "Import Gnome dconf settings"

@@ -14,11 +14,18 @@ toggle-tiled-left=['<Super>j']
 toggle-tiled-right=['<Super>l']
 
 [org/gnome/settings-daemon/plugins/media-keys]
-screensaver=['<Primary><Alt>l']
+screensaver=['<Primary><Alt>BackSpace']
 terminal=['<Super>Return']
 
 [org/gnome/desktop/interface]
-icon-theme='Faenza-Darker'
+cursor-theme='Yaru'
+gtk-theme='Yaru-purple'
+icon-theme='Yaru-purple'
+document-font-name='Sans 11'
+font-name='Ubuntu 11'
+monospace-font-name='Ubuntu Mono 13'
+font-antialiasing='grayscale'
+font-hinting='slight'
 
 [org/gnome/terminal/legacy/profiles:]
 default='b3dc927d-389d-4583-8978-cff56fa0c748'
@@ -49,19 +56,5 @@ show-image-thumbnails='local-only'
 [org/gnome/nautilus/icon-view]
 default-zoom-level='small'
 
-[org/gnome/shell/extensions/nvpnconnect]
-compact-icon=true
-
-[org/gnome/shell/extensions/dash-to-dock]
-apply-custom-theme=false
-custom-theme-shrink=false
-dash-max-icon-size=48
-dock-position='BOTTOM'
-force-straight-corner=false
-icon-size-fixed=false
-intellihide-mode='FOCUS_APPLICATION_WINDOWS'
-isolate-workspaces=false
-scroll-action='switch-workspace'
-show-apps-at-top=false
-show-mounts=true
-show-trash=false
+[user-theme]
+name='Yaru-purple'
