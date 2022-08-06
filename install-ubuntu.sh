@@ -3,19 +3,23 @@ SCRIPT=`realpath -s $0`
 SCRIPTPATH=`dirname $SCRIPT`
 
 # Ensure apt is set up to work with https sources
-sudo apt-get install --reinstall apt-transport-https ca-certificates
+sudo apt-get install --reinstall apt-transport-https ca-certificates curl gnupg lsb-release
 
+
+# Add docker repo
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Add Sublime repo
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/sublimehq-pub.gpg
 echo "deb [trusted=yes] https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
 # Add NordVpn repo
-wget -qO - https://repo.nordvpn.com/gpg/nordvpn_public.asc | sudo apt-key add -
+curl -fsSL https://repo.nordvpn.com/gpg/nordvpn_public.asc | sudo gpg --dearmor -o /etc/apt/keyrings/nordvpn.gpg
 echo "deb https://repo.nordvpn.com/deb/nordvpn/debian stable main" | sudo tee /etc/apt/sources.list.d/nordvpn.list
 
 # Add Spotify repo
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
+curl -fsSL https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
 packagelist=(
@@ -40,6 +44,19 @@ packagelist=(
   vagrant
   meld
   dbeaver-ce
+  # Docker
+  docker-ce
+  docker-ce-cli
+  containerd.io
+  docker-compose-plugin
+  # KVM (for minikube)
+  bridge-utils
+  cpu-checker
+  libvirt-clients
+  libvirt-daemon
+  libvirt-daemon-system
+  qemu
+  qemu-kvm
   # Postgresql
   postgresql
   postgresql-contrib
@@ -72,6 +89,20 @@ packagelist=(
 
 sudo apt-get update
 sudo apt-get install --assume-yes ${packagelist[@]}
+
+
+# install kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
+
+# Install minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+minikube completion bash | sudo tee /etc/bash_completion.d/minikube > /dev/null
+sudo usermod -aG libvirt $USER
+minikube config set driver kvm2
+minikube addons enable ingress
 
 
 # Install pipx for installing python application in own inverionment 
@@ -129,3 +160,5 @@ dconf load / < $SCRIPTPATH/install/dconf.export
 # Create symlinks
 echo "Create symlinks"
 python3 $SCRIPTPATH/files/create_symlinks.py
+
+echo "restart required"
