@@ -1,5 +1,0 @@
-#!/bin/bash
-
-date +"%d %B %Y"
-echo ""
-echo ""

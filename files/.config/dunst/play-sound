@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-paplay $HOME/.config/dunst/notify.wav

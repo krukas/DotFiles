@@ -6,11 +6,9 @@ import shutil
 files_path = os.path.dirname(os.path.realpath(__file__))
 home = os.path.expanduser("~")
 dir_symlinks = [
-	'.vim',
 	'.fonts',
-	'.config/i3blocks/scripts',
-	r'.icons/[\w-]+',
 ]
+print(os.path.basename(__file__))
 
 def is_dir_symlink(path):
 	for dir_symlink in dir_symlinks:
@@ -51,7 +49,7 @@ for root, dirs, files in os.walk(files_path):
 
 	for file in files:
 		file_path = os.path.join(root, file)
-		if file_path == os.path.join(files_path, __file__):
+		if file_path == os.path.join(files_path, os.path.basename(__file__)):
 			continue
 
 		home_path = home + file_path.replace(files_path, '')

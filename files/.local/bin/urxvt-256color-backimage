@@ -1,1 +1,0 @@
-urxvt-256color --background-expr 'rootalign keep { load "$HOME/.config/i3/back-terminal.jpg" }' "$@"
