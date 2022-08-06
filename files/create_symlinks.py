@@ -8,7 +8,6 @@ home = os.path.expanduser("~")
 dir_symlinks = [
 	'.fonts',
 ]
-print(os.path.basename(__file__))
 
 def is_dir_symlink(path):
 	for dir_symlink in dir_symlinks:
