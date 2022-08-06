@@ -37,7 +37,6 @@ packagelist=(
   vlc
   # Development
   sublime-text
-  vim
   build-essential
   gettext
   virtualbox
@@ -125,17 +124,6 @@ fi
 
 # Setup postgresql
 sudo runuser postgres -c "psql -c \"CREATE ROLE $(whoami) LOGIN SUPERUSER PASSWORD '$(whoami)';\""
-
-
-# Update submodules
-echo "Update submodles"
-git submodule update --init --recursive
-
-# Install powerline fonts
-mkdir /tmp/powerline
-git clone https://github.com/powerline/fonts.git /tmp/powerline --depth=1
-source /tmp/powerline/install.sh
-rm -rf /tmp/powerline
 
 
 # Install gnome shell extensions
