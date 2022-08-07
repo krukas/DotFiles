@@ -101,7 +101,6 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube completion bash | sudo tee /etc/bash_completion.d/minikube > /dev/null
 sudo usermod -aG libvirt $USER
 minikube config set driver kvm2
-minikube addons enable ingress
 
 
 # Install pipx for installing python application in own inverionment 
